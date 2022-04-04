@@ -25,7 +25,6 @@
 ## Descrição
 
 Feito com [Nest](https://github.com/nestjs/nest) framework.
-Projeto realizado para o desafio técnico da UOL Compass.
 
 ## Requisitos
 - Docker
