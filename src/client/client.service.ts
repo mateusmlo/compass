@@ -32,7 +32,7 @@ export class ClientService {
     // calculates client's age
     const clientAge = DateTime.now()
       .diff(DateTime.fromJSDate(formatBirthdate), 'years')
-      .toHuman({ listStyle: 'short', maximumFractionDigits: 0 })
+      .toHuman({ listStyle: 'short', maximumFractionDigits: 2 })
       .replace(' years', '');
 
     const clientCity = await this.cityService.findCityByName(city);
@@ -42,7 +42,7 @@ export class ClientService {
       surname,
       gender,
       birthDate: formatBirthdate,
-      age: parseInt(clientAge),
+      age: Math.floor(parseFloat(clientAge)),
       city: clientCity,
     });
 
