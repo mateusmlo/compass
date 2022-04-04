@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  dev:
+    container_name: compass_dev
+    image: mateusmlo/compass-interview:latest
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - 3001:3001
+    command: npm run start:dev
+    env_file:
+      - .env
+    volumes:
+      - .:/opt/compass
+      - /opt/compass/node_modules
+    networks:
+      - compass
+  db:
+    image: postgres:alpine
+    container_name: compass_pgsql
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - /opt/compass/docker-volumes/db/:/var/lib/postgresql/data
+    networks:
+      - compass   
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    env_file:
+      - .env
+    ports:
+        - "5050:80"
+    depends_on:
+      - db     
+networks:
+  compass:
+volumes:
+  db:
+    driver: local
