@@ -40,7 +40,7 @@ Projeto realizado para o desafio técnico da UOL Compass.
 - Class Transformer/Validator (sanitização e DTOs)
 
 ## Instalação e setup
-Primeiramente fazer uma cópia do arquivo .env.example para apenas .env, e então preencher as variáveis de acordo (as com valores entre <<x>>). Para iniciar o projeto e suas dependências, basta rodar no terminal `docker-compose up -d` e os requests estarão sendo aceitos na porta 3001 do localhost. Tanto o Node quanto o NestJS já são baixados diretamente da minha imagem hospedada no DockerHub, então não há preocupação com versões locais da stack. Há também uma imagem do pgAdmin no container para que a database possa ser gerenciada.  
+Primeiramente fazer uma cópia do arquivo .env.example para apenas .env, e então preencher as variáveis de acordo (as com valores entre <\<x>\>). Para iniciar o projeto e suas dependências, basta rodar no terminal `docker-compose up -d` e os requests estarão sendo aceitos na porta 3001 do localhost. Tanto o Node quanto o NestJS já são baixados diretamente da minha imagem hospedada no DockerHub, então não há preocupação com versões locais da stack. Há também uma imagem do pgAdmin no container para que a database possa ser gerenciada.  
 
 ## Rodar localmente
 Para rodar localmente será necessário ter uma imagem do PostgreSQL rodando separadamente na porta 5432 ou tê-lo instalado em sua máquina, nesse último caso tendo as variáveis de ambiente `POSTGRES_` devidamente atualizadas com suas credenciais locais, com exceção de `POSTGRES_DB`. Feito isso, basta rodar no terminal:
