@@ -22,51 +22,36 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Feito com [Nest](https://github.com/nestjs/nest) framework.
+Projeto realizado para o desafio técnico da UOL Compass.
 
-## Installation
+## Requisitos
+- Docker
+- Docker compose
 
-```bash
-$ npm install
-```
+## Framework e Libs utilizadas:
+- NestJS (Framework)
+- NodeJS (LTS: 16.13.1)
+- TypeORM
+- pg (PostgreSQL)
+- Luxon (para tratar datas)
+- Class Transformer/Validator (sanitização e DTOs)
 
-## Running the app
+## Instalação e setup
+Primeiramente fazer uma cópia do arquivo .env.example para apenas .env, e então preencher as variáveis de acordo (as com valores entre <<x>>). Para iniciar o projeto e suas dependências, basta rodar no terminal `docker-compose up -d` e os requests estarão sendo aceitos na porta 3001 do localhost. Tanto o Node quanto o NestJS já são baixados diretamente da minha imagem hospedada no DockerHub, então não há preocupação com versões locais da stack. Há também uma imagem do pgAdmin no container para que a database possa ser gerenciada.  
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Rodar localmente
+Para rodar localmente será necessário ter uma imagem do PostgreSQL rodando separadamente na porta 5432 ou tê-lo instalado em sua máquina, nesse último caso tendo as variáveis de ambiente `POSTGRES_` devidamente atualizadas com suas credenciais locais, com exceção de `POSTGRES_DB`. Feito isso, basta rodar no terminal:
+  
+ ```bash
+  yarn
+  ```
+  Aguardar a instalação e então:
+  ```bash
+  yarn start:dev
+  ```
 
 ## License
 
